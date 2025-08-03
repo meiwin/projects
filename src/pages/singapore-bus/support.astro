@@ -1,0 +1,66 @@
+---
+import '../../styles/global.css';
+
+const currentYear = new Date().getFullYear();
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Support for Singapore Bus App" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support - Singapore Bus</title>
+</head>
+<body class="bg-white text-gray-900 font-mono">
+  <div class="min-h-screen max-w-4xl mx-auto px-6 py-12">
+    <!-- Header -->
+    <header class="mb-12">
+      <nav class="mb-8">
+        <a href="/singapore-bus" class="text-blue-600 hover:text-blue-800 text-sm">← Back to Singapore Bus</a>
+      </nav>
+      <h1 class="text-2xl font-bold">Support - Singapore Bus</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="space-y-8">      
+      <section>
+        <h2 class="text-lg font-semibold mb-4">Frequently Asked Questions (FAQs)</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">Below are some common questions and answers:</p>
+        
+        <ul class="space-y-4 text-gray-600">
+          <li>
+            <p class="mb-1"><strong>Q:</strong> How do I download the Singapore Bus app?</p>
+            <p class="text-sm leading-relaxed"><strong>A:</strong> You can download the app from the App Store on iOS devices. Simply search for "Singapore Bus" and click on the download button.</p>
+          </li>
+          <li>
+            <p class="mb-1"><strong>Q:</strong> How accurate are the bus arrival times?</p>
+            <p class="text-sm leading-relaxed"><strong>A:</strong> The app retrieves real-time data from the Land Transport Authority of Singapore (LTA). While we strive to provide accurate information, delays or inaccuracies may occur due to various factors such as traffic conditions.</p>
+          </li>
+          <li>
+            <p class="mb-1"><strong>Q:</strong> Can I use the app without an internet connection?</p>
+            <p class="text-sm leading-relaxed"><strong>A:</strong> No, the app requires an internet connection to fetch the latest bus arrival times from the LTA database.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold mb-4">Contact Us</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          If you have any further questions or need assistance, please feel free to contact us:
+        </p>
+        <ul class="text-gray-600">
+          <li><strong>Email:</strong> contact@singapore-bus.com</li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-20 pt-8 border-t border-gray-200">
+      <p class="text-center text-gray-400 mt-4">
+        © {currentYear} /meiwin/. All rights reserved.
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

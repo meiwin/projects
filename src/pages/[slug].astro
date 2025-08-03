@@ -1,0 +1,140 @@
+---
+import '../styles/global.css';
+
+const currentYear = new Date().getFullYear();
+
+export async function getStaticPaths() {
+  return [
+    {
+      params: { slug: 'singapore-bus' },
+      props: {
+        title: 'Singapore Bus',
+        image: '/ic-singapore-bus.png',
+        description: [
+          'Singapore Bus is an app that tells you when the next bus will come to any bus stop in Singapore. It gets its information straight from the Land Transport Authority of Singapore (LTA).',
+          'It\'s made for busy people in Singapore, so it\'s quick, neat, and easy to use.',
+          'It\'s the first to give you Live Activity notifications right on your phone\'s Lock Screen. This means you can quickly see when your bus will arrive without even unlocking your phone.'
+        ],
+        appStoreUrl: 'https://apps.apple.com/my/app/singapore-bus/id6478116422',
+        features: [
+          'Get notifications on your phone about when the bus is coming, even if your phone is locked.',
+          'It looks nice and is easy to understand.',
+          'It shows you three different times for when the bus will arrive.',
+          'You can change how the app looks by picking your favorite theme.',
+          'Save your favorite bus stops and give them special names.',
+          'Find out if the arriving bus is single deck, double deck, or bendy.',
+          'See if the bus is wheelchair accessible.',
+          'Know how crowded the bus is (if there are seats or just standing room).',
+          'Save the bus routes you like best.',
+          'See all the bus stops along selected route.'
+        ],
+      }
+    },
+    {
+      params: { slug: 'tabi' },
+      props: {
+        title: 'Tabi',
+        image: '/ic-tabi.png',
+        description: 'A comprehensive travel planning and expense tracking application that helps travelers organize their trips, manage budgets, and keep track of expenses across different currencies and categories.',
+        appStoreUrl: 'https://tabi-travel.com',
+        features: [
+          'Trip planning with itinerary management',
+          'Multi-currency expense tracking and conversion',
+          'Budget monitoring with visual analytics',
+          'Collaborative trip sharing with friends',
+          'Receipt scanning and categorization',
+          'Export reports in multiple formats'
+        ],
+      }
+    }
+  ];
+}
+
+const { title, image, description, appStoreUrl, features } = Astro.props;
+const { slug } = Astro.params;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content={`${title} - Portfolio Project`} />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} - Portfolio</title>
+</head>
+<body class="bg-white text-gray-900 font-mono">
+  <div class="min-h-screen max-w-4xl mx-auto px-6 py-12">
+    <!-- Header -->
+    <header class="mb-12">
+      <nav class="mb-8">
+        <a href="/" class="text-blue-600 hover:text-blue-800 text-sm">← Back</a>
+      </nav>
+      
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+          <img src={image} alt={title} class="w-12 h-12" />
+        </div>
+        <div>
+          <h1 class="text-2xl font-bold">{title}</h1>
+          <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">Active</span>
+        </div>
+      </div>
+      
+      <div class="flex gap-4 mb-8">
+        <a 
+          href={appStoreUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-blue-600 hover:text-blue-800 text-sm font-medium"
+        >
+          App Store →
+        </a>
+        <a 
+          href={`/${slug}/privacy`}
+          class="text-blue-600 hover:text-blue-800 text-sm font-medium"
+        >
+          Privacy Policy →
+        </a>
+        <a 
+          href={`/${slug}/support`}
+          class="text-blue-600 hover:text-blue-800 text-sm font-medium"
+        >
+          Support →
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="space-y-12">
+      <!-- Overview -->
+      <section>
+        <h2 class="text-lg font-semibold mb-4">Overview</h2>
+        <div class="space-y-4">
+          {Array.isArray(description) ? description.map((paragraph) => (
+            <p class="text-gray-600 leading-relaxed">{paragraph}</p>
+          )) : (
+            <p class="text-gray-600 leading-relaxed">{description}</p>
+          )}
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section>
+        <h2 class="text-lg font-semibold mb-4">Key Features</h2>
+        <ul class="space-y-2">
+          {features.map((feature) => (
+            <li class="text-gray-600 text-sm">• {feature}</li>
+          ))}
+        </ul>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-20 pt-8 border-t border-gray-200">
+      <p class="text-center text-gray-400 mt-4">
+        © {currentYear} /meiwin/. All rights reserved.
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
