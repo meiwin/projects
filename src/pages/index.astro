@@ -1,0 +1,88 @@
+---
+import '../styles/global.css';
+
+const projects = [
+  {
+    slug: 'singapore-bus',
+    name: 'Singapore Bus',
+    description: 'Real-time bus arrival information app for Singapore buses',
+    status: 'Active',
+    image: '/public/ic-singapore-bus.png'
+  },
+  {
+    slug: 'tabi',
+    name: 'Tabi', 
+    description: 'Private and effortless travel tracker',
+    status: 'Active',
+    image: '/public/ic-tabi.png'
+  }
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Developer portfolio showcasing projects and work" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>/meiwin/projects/</title>
+</head>
+<body class="bg-white text-gray-900 font-mono">
+  <div class="min-h-screen max-w-4xl mx-auto px-6 py-12">
+    <!-- Header -->
+    <header class="mb-16">
+      <h1 class="text-2xl font-bold mb-4">Index of /meiwin/projects/</h1>
+      <p class="text-gray-600 leading-relaxed">
+        Software developer focused on building practical applications and tools.
+      </p>
+    </header>
+
+    <!-- Projects Section -->
+    <main>
+      <section class="mb-12">
+        <h2 class="text-xl font-semibold mb-8">Projects</h2>
+        
+        <div class="space-y-8">
+          {projects.map((project) => (
+            <div class="border-b border-gray-200 pb-8 last:border-b-0">
+              <div class="flex items-start gap-6">
+                <!-- Icon -->
+                <img src={project.image} alt={project.name} class="w-12 h-12 rounded-lg" />
+                
+                <!-- Content -->
+                <div class="flex-grow">
+                  <div class="flex items-center gap-4 mb-3">
+                    <h3 class="text-lg font-semibold">{project.name}</h3>
+                    <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">
+                      {project.status}
+                    </span>
+                  </div>
+                  
+                  <p class="text-gray-600 mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
+                  
+                  
+                  <a 
+                    href={`/projects/${project.slug}`}
+                    class="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                  >
+                    Learn more →
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-20 pt-8 border-t border-gray-200">
+      <p class="text-center text-gray-400 mt-4">
+        © 2025 /meiwin/. All rights reserved.
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

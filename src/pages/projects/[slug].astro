@@ -1,0 +1,160 @@
+---
+import '../../styles/global.css';
+
+export async function getStaticPaths() {
+  return [
+    {
+      params: { slug: 'singapore-bus' },
+      props: {
+        title: 'Singapore Bus',
+        icon: '🚌',
+        description: 'A real-time bus arrival information app that helps Singapore commuters plan their journeys more efficiently. The app provides accurate arrival times, route information, and service alerts for all public bus services in Singapore.',
+        tech: ['React Native', 'TypeScript', 'LTA DataMall API', 'Redux Toolkit', 'Expo'],
+        demoUrl: 'https://apps.apple.com/sg/developer/singapore-bus',
+        githubUrl: 'https://github.com/username/singapore-bus',
+        features: [
+          'Real-time bus arrival information with countdown timers', 
+          'Search functionality for bus stops and routes',
+          'Favorite bus stops for quick access',
+          'Service alerts and disruption notifications',
+          'Offline support for saved bus stops',
+          'Clean, intuitive interface optimized for mobile use'
+        ],
+        challenges: 'Integrating with Singapore\'s LTA DataMall API while ensuring data accuracy and handling rate limits. Optimizing for performance on various mobile devices and network conditions.',
+        impact: 'Used by thousands of daily commuters in Singapore to reduce waiting times and improve their public transport experience.'
+      }
+    },
+    {
+      params: { slug: 'tabi' },
+      props: {
+        title: 'Tabi',
+        icon: '✈️',
+        description: 'A comprehensive travel planning and expense tracking application that helps travelers organize their trips, manage budgets, and keep track of expenses across different currencies and categories.',
+        tech: ['React', 'Node.js', 'MongoDB', 'Express.js', 'JWT Authentication', 'Chart.js'],
+        demoUrl: 'https://tabi-travel.com',
+        githubUrl: 'https://github.com/username/tabi',
+        features: [
+          'Trip planning with itinerary management',
+          'Multi-currency expense tracking and conversion',
+          'Budget monitoring with visual analytics',
+          'Collaborative trip sharing with friends',
+          'Receipt scanning and categorization',
+          'Export reports in multiple formats'
+        ],
+        challenges: 'Implementing real-time currency conversion, handling complex data relationships between trips, expenses, and users, and creating an intuitive UX for managing multiple trip budgets.',
+        impact: 'Helps travelers stay organized and within budget, with features specifically designed for frequent travelers and group trips.'
+      }
+    }
+  ];
+}
+
+const { title, icon, description, tech, demoUrl, githubUrl, features, challenges, impact } = Astro.props;
+const { slug } = Astro.params;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content={`${title} - Portfolio Project`} />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} - Portfolio</title>
+</head>
+<body class="bg-white text-gray-900 font-mono">
+  <div class="min-h-screen max-w-4xl mx-auto px-6 py-12">
+    <!-- Header -->
+    <header class="mb-12">
+      <nav class="mb-8">
+        <a href="/" class="text-blue-600 hover:text-blue-800 text-sm">← Back to Portfolio</a>
+      </nav>
+      
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center text-2xl">
+          {icon}
+        </div>
+        <div>
+          <h1 class="text-2xl font-bold">{title}</h1>
+          <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">Active</span>
+        </div>
+      </div>
+      
+      <div class="flex gap-4 mb-8">
+        <a 
+          href={demoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-blue-600 hover:text-blue-800 text-sm font-medium"
+        >
+          View Live →
+        </a>
+        <a 
+          href={githubUrl}
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="text-blue-600 hover:text-blue-800 text-sm font-medium"
+        >
+          Source Code →
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="space-y-12">
+      <!-- Overview -->
+      <section>
+        <h2 class="text-lg font-semibold mb-4">Overview</h2>
+        <p class="text-gray-600 leading-relaxed">{description}</p>
+      </section>
+
+      <!-- Technologies -->
+      <section>
+        <h2 class="text-lg font-semibold mb-4">Technologies</h2>
+        <div class="flex flex-wrap gap-2">
+          {tech.map((technology) => (
+            <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
+              {technology}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section>
+        <h2 class="text-lg font-semibold mb-4">Key Features</h2>
+        <ul class="space-y-2">
+          {features.map((feature) => (
+            <li class="text-gray-600 text-sm">• {feature}</li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- Challenges -->
+      {challenges && (
+        <section>
+          <h2 class="text-lg font-semibold mb-4">Technical Challenges</h2>
+          <p class="text-gray-600 leading-relaxed text-sm">{challenges}</p>
+        </section>
+      )}
+
+      <!-- Impact -->
+      {impact && (
+        <section>
+          <h2 class="text-lg font-semibold mb-4">Impact</h2>
+          <p class="text-gray-600 leading-relaxed text-sm">{impact}</p>
+        </section>
+      )}
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-20 pt-8 border-t border-gray-200">
+      <div class="flex justify-center gap-8 text-sm text-gray-600">
+        <a href="/terms" class="hover:text-gray-900">Terms</a>
+        <a href="/privacy" class="hover:text-gray-900">Privacy</a>
+      </div>
+      <p class="text-center text-gray-400 mt-4 text-xs">
+        © 2024
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
