@@ -9,7 +9,7 @@ export async function getStaticPaths() {
       params: { slug: 'singapore-bus' },
       props: {
         title: 'Singapore Bus',
-        image: 'ic-singapore-bus.png',
+        image: '/projects/ic-singapore-bus.png',
         description: [
           'Singapore Bus is an app that tells you when the next bus will come to any bus stop in Singapore. It gets its information straight from the Land Transport Authority of Singapore (LTA).',
           'It\'s made for busy people in Singapore, so it\'s quick, neat, and easy to use.',
@@ -34,7 +34,7 @@ export async function getStaticPaths() {
       params: { slug: 'tabi' },
       props: {
         title: 'Tabi: Travel Auto-Tracker',
-        image: 'ic-tabi.png',
+        image: '/projects/ic-tabi.png',
         description: 'The only travel tracker that keeps your data completely private. Automatically logs your travels across countries and cities with all data stored securely on your device. Perfect for frequent travelers and digital nomads who need travel records for tax compliance or visa applications - without compromising privacy.',
         appStoreUrl: 'https://apps.apple.com/us/app/tabi-track-effortlessly/id6749455385',
         features: [
@@ -68,7 +68,7 @@ const { slug } = Astro.params;
     <!-- Header -->
     <header class="mb-12">
       <nav class="mb-8">
-        <a href="/" class="text-blue-600 hover:text-blue-800 text-sm">← Back</a>
+        <a href="/projects" class="text-blue-600 hover:text-blue-800 text-sm">← Back</a>
       </nav>
       
       <div class="flex items-center gap-4 mb-6">
@@ -89,13 +89,13 @@ const { slug } = Astro.params;
           App Store →
         </a>
         <a 
-          href={`${slug}/privacy`}
+          href={`privacy`}
           class="text-blue-600 hover:text-blue-800 text-sm font-medium"
         >
           Privacy Policy →
         </a>
         <a 
-          href={`${slug}/support`}
+          href={`support`}
           class="text-blue-600 hover:text-blue-800 text-sm font-medium"
         >
           Support →
