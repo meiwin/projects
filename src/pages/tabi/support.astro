@@ -25,77 +25,110 @@ const currentYear = new Date().getFullYear();
     <!-- Main Content -->
     <main class="space-y-8">      
       <section>
-        <h2 class="text-lg font-semibold mb-4">Getting Help</h2>
-        <p class="text-gray-600 leading-relaxed">
-          Need assistance with Tabi? We're here to help you make the most of your travel planning and expense tracking experience.
-        </p>
+        <h2 class="text-lg font-semibold mb-4">Frequently Asked Questions</h2>
+        
+        <div class="space-y-8">
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-4">Getting Started</h3>
+            <div class="space-y-4">
+              <div>
+                <p class="font-semibold text-gray-900 mb-2">Q: How do I set up Tabi?</p>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  A: Simply download the app and grant location permissions when prompted. Tabi will automatically start tracking your travels in the background. No account creation or additional setup required.
+                </p>
+              </div>
+
+              <div>
+                <p class="font-semibold text-gray-900 mb-2">Q: Why isn't Tabi tracking my location?</p>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  A: Check that you've granted "Always" location permission in iOS Settings > Privacy & Security > Location Services > Tabi. The app needs background location access to track your travels automatically.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-4">Privacy & Data</h3>
+            <div class="space-y-4">
+              <div>
+                <p class="font-semibold text-gray-900 mb-2">Q: Where is my location data stored?</p>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  A: All your travel data stays on your device. We never upload your location information to any servers. Only you have access to your travel history.
+                </p>
+              </div>
+
+              <div>
+                <p class="font-semibold text-gray-900 mb-2">Q: Can you see my location data?</p>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  A: No. Since all data is stored locally on your device, we have no access to your location information or travel patterns.
+                </p>
+              </div>
+
+              <div>
+                <p class="font-semibold text-gray-900 mb-2">Q: Does Tabi use any internet connection?</p>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  A: Only to convert coordinates into city/country names using Apple's geocoding service. Your raw location coordinates are never sent to our servers.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-4">Features & Usage</h3>
+            <div class="space-y-4">
+              <div>
+                <p class="font-semibold text-gray-900 mb-2">Q: How often does Tabi track my location?</p>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  A: Tabi tracks your location every few hours to balance accuracy with battery life. The exact interval may vary based on your movement and device settings.
+                </p>
+              </div>
+
+              <div>
+                <p class="font-semibold text-gray-900 mb-2">Q: Will Tabi drain my battery?</p>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  A: Tabi is optimized for minimal battery usage. It uses efficient background location tracking that shouldn't noticeably impact your battery life.
+                </p>
+              </div>
+
+              <div>
+                <p class="font-semibold text-gray-900 mb-2">Q: How do I export my travel data?</p>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  A: Go to Settings > Export Data within the app. You can export your travel history in multiple formats for tax records, visa applications, or personal backup.
+                </p>
+              </div>
+
+              <div>
+                <p class="font-semibold text-gray-900 mb-2">Q: What happens if I delete the app?</p>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  A: All your travel data will be permanently deleted since it's stored only on your device. Make sure to export your data first if you want to keep it.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section>
-        <h2 class="text-lg font-semibold mb-4">Frequently Asked Questions</h2>
+        <h2 class="text-lg font-semibold mb-4">Contact Us</h2>
         
         <div class="space-y-6">
           <div>
-            <h3 class="font-semibold text-gray-900 mb-2">How do I create a new trip?</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              Tap the "+" button on the main screen, enter your trip details including destination, dates, and budget. You can then start adding expenses and planning your itinerary.
+            <h3 class="font-semibold text-gray-900 mb-4">Need Help?</h3>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              If you can't find the answer to your question in our FAQ, we're here to help:
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+              <strong>Email:</strong> help@meiwin.helpscoutapp.com
             </p>
           </div>
 
           <div>
-            <h3 class="font-semibold text-gray-900 mb-2">Can I share trips with friends or family?</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              Yes! You can invite others to collaborate on your trip. They'll be able to add expenses, view the itinerary, and help with planning. Go to your trip settings and tap "Invite Collaborators."
-            </p>
-          </div>
-
-          <div>
-            <h3 class="font-semibold text-gray-900 mb-2">How accurate are the currency conversions?</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              Currency rates are updated regularly using reliable financial data sources. However, actual exchange rates may vary slightly depending on where you exchange money.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="font-semibold text-gray-900 mb-2">Can I export my expense reports?</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              Yes! You can export your trip expenses in various formats including PDF and CSV. Go to your trip details and tap "Export Report."
-            </p>
-          </div>
-
-          <div>
-            <h3 class="font-semibold text-gray-900 mb-2">Is my data synced across devices?</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              Yes, your trips and expenses are automatically synced across all your devices when you're signed in to your account.
+            <h3 class="font-semibold text-gray-900 mb-4">App Store Reviews</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Love Tabi? Please consider leaving a review on the App Store. It helps other travelers discover our privacy-focused travel tracking.
             </p>
           </div>
         </div>
-      </section>
-
-      <section>
-        <h2 class="text-lg font-semibold mb-4">Contact Support</h2>
-        <p class="text-gray-600 leading-relaxed mb-4">
-          Can't find what you're looking for? We're here to help:
-        </p>
-        <div class="bg-gray-50 p-4 rounded-lg">
-          <p class="text-gray-900 font-medium mb-2">Email Support</p>
-          <p class="text-gray-600 text-sm mb-1">support@tabi-travel.com</p>
-          <p class="text-gray-500 text-xs">We aim to respond within 24 hours</p>
-        </div>
-      </section>
-
-      <section>
-        <h2 class="text-lg font-semibold mb-4">Feature Requests</h2>
-        <p class="text-gray-600 leading-relaxed">
-          Have an idea for a new feature? We'd love to hear from you! Send us your suggestions and help us make Tabi even better for travelers everywhere.
-        </p>
-      </section>
-
-      <section>
-        <h2 class="text-lg font-semibold mb-4">Data & Privacy</h2>
-        <p class="text-gray-600 leading-relaxed">
-          Your travel data is important to us. If you have questions about how we handle your information, please check our Privacy Policy or contact us directly.
-        </p>
       </section>
     </main>
 

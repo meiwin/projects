@@ -9,13 +9,13 @@ export async function getStaticPaths() {
       params: { slug: 'singapore-bus' },
       props: {
         title: 'Singapore Bus',
-        image: '/ic-singapore-bus.png',
+        image: 'ic-singapore-bus.png',
         description: [
           'Singapore Bus is an app that tells you when the next bus will come to any bus stop in Singapore. It gets its information straight from the Land Transport Authority of Singapore (LTA).',
           'It\'s made for busy people in Singapore, so it\'s quick, neat, and easy to use.',
           'It\'s the first to give you Live Activity notifications right on your phone\'s Lock Screen. This means you can quickly see when your bus will arrive without even unlocking your phone.'
         ],
-        appStoreUrl: 'https://apps.apple.com/my/app/singapore-bus/id6478116422',
+        appStoreUrl: 'https://apps.apple.com/us/app/singapore-bus/id6478116422',
         features: [
           'Get notifications on your phone about when the bus is coming, even if your phone is locked.',
           'It looks nice and is easy to understand.',
@@ -33,17 +33,18 @@ export async function getStaticPaths() {
     {
       params: { slug: 'tabi' },
       props: {
-        title: 'Tabi',
-        image: '/ic-tabi.png',
-        description: 'A comprehensive travel planning and expense tracking application that helps travelers organize their trips, manage budgets, and keep track of expenses across different currencies and categories.',
-        appStoreUrl: 'https://tabi-travel.com',
+        title: 'Tabi: Travel Auto-Tracker',
+        image: 'ic-tabi.png',
+        description: 'The only travel tracker that keeps your data completely private. Automatically logs your travels across countries and cities with all data stored securely on your device. Perfect for frequent travelers and digital nomads who need travel records for tax compliance or visa applications - without compromising privacy.',
+        appStoreUrl: 'https://apps.apple.com/us/app/tabi-track-effortlessly/id6749455385',
         features: [
-          'Trip planning with itinerary management',
-          'Multi-currency expense tracking and conversion',
-          'Budget monitoring with visual analytics',
-          'Collaborative trip sharing with friends',
-          'Receipt scanning and categorization',
-          'Export reports in multiple formats'
+          '100% private: All location data stays on your device, never uploaded',
+          'Automatic background tracking with minimal battery impact',
+          'Complete travel analytics: countries, cities, days traveled',
+          'Visual timeline and travel history',
+          'Export capabilities for tax and visa documentation',
+          'Only uses Apple\'s geocoding API to identify locations',
+          'No account required, no data collection, no tracking',
         ],
       }
     }
@@ -71,9 +72,7 @@ const { slug } = Astro.params;
       </nav>
       
       <div class="flex items-center gap-4 mb-6">
-        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
-          <img src={image} alt={title} class="w-12 h-12" />
-        </div>
+        <img src={image} alt={title} class="w-16 h-16 rounded-lg" />
         <div>
           <h1 class="text-2xl font-bold">{title}</h1>
           <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">Active</span>
@@ -90,13 +89,13 @@ const { slug } = Astro.params;
           App Store →
         </a>
         <a 
-          href={`/${slug}/privacy`}
+          href={`${slug}/privacy`}
           class="text-blue-600 hover:text-blue-800 text-sm font-medium"
         >
           Privacy Policy →
         </a>
         <a 
-          href={`/${slug}/support`}
+          href={`${slug}/support`}
           class="text-blue-600 hover:text-blue-800 text-sm font-medium"
         >
           Support →
